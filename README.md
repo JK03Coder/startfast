@@ -1,38 +1,41 @@
 # Startfast Saas Template
 
-Everything you need to build a Saas project, powered by [`pocketbase`](https://pocketbase.io).
+Everything you need to build a Saas project, powered by [pocketbase](https://pocketbase.io).
 
-## Creating a project
+## Cloning this project
 
-If you're seeing this, you've probably already done this step. Congrats!
+Clone the project how you would any other project on GitHub.
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+# clone this project in the current directory
+git clone git@github.com:JK03Coder/startfast.git
 
-# create a new project in my-app
-npm create svelte@latest my-app
+# clone this project in my-app
+git clone git@github.com:JK03Coder/startfast.git my-app
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned a project and installed dependencies with `bun install` start a development server:
 
 ```bash
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
+To test a production version of your app locally:
 
 ```bash
-npm run build
+# the build output is in pb/pb_public
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`. Then going to [`localhost:4173`](http://localhost:4173). This is running locally through the pocketbase executable. By the way this pocketbase executable is for amd64 linux so if you're developing on a different system then download the correct version from the [pocketbase docs](https://pocketbase.io/docs/).
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Production
+
+You can use the provided docker-compose or Dockerfile how you want. I connect my GitHub project to a self hosted [Coolify](https://coolify.io) instance to automatically deploy through docker-compose. You can also use the docker files to test how your site will be in production as well.

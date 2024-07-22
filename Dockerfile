@@ -20,7 +20,7 @@ RUN apk add --no-cache \
   && chmod +x /app/pocketbase \
   && rm /tmp/pb.zip \
   && rm /app/CHANGELOG.md /app/LICENSE.md \
-  && apk del unzip
+  && apk del unzip curl
 
 # Copy built files from the builder stage
 COPY --from=builder /app/pb/pb_public /app/pb_public
