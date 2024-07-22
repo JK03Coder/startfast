@@ -3,7 +3,8 @@ FROM oven/bun:alpine AS builder
 WORKDIR /app
 COPY . .
 RUN bun install \
-  && bun run build
+  && bun run build \
+  && mkdir -p /app/pb/pb_public /app/pb/pb_hooks /app/pb/pb_migrations
 
 # Stage 2: Final image with PocketBase
 FROM alpine:3.17
