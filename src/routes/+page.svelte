@@ -5,6 +5,15 @@
   import * as Card from '$lib/components/ui/card';
   import { Checkbox } from '$lib/components/ui/checkbox';
   import { Input } from '$lib/components/ui/input';
+  import * as Avatar from '$lib/components/ui/avatar';
+
+  type UserCard = {
+    avatarUrl: string;
+    initials: string;
+    name: string;
+    role: string;
+    description: string;
+  };
 </script>
 
 <main
@@ -31,7 +40,6 @@
             Get StartFast
             <ArrowRight />
           </Button>
-          <Button variant="outline" href="/">Contact sales team</Button>
         </div>
         <!-- End Buttons -->
       </div>
@@ -48,6 +56,77 @@
     <!-- End Grid -->
   </section>
   <!-- End Hero -->
+
+  <section class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:[&>*:nth-child(3n-1)]:translate-y-16"
+    >
+      {#snippet userCard(user: UserCard)}
+        <Card.Root>
+          <Card.Header class="flex flex-row gap-4">
+            <Avatar.Root>
+              <Avatar.Image src={user.avatarUrl} />
+              <Avatar.Fallback>{user.initials}</Avatar.Fallback>
+            </Avatar.Root>
+            <div>
+              <Card.Title>{user.name}</Card.Title>
+              <Card.Description>{user.role}</Card.Description>
+            </div>
+          </Card.Header>
+          <Card.Content>{user.description}</Card.Content>
+        </Card.Root>
+      {/snippet}
+      {@render userCard({
+        avatarUrl: "https://github.com/shadcn.png",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas startup"
+      })}
+      {@render userCard({
+        avatarUrl: "https://github.com/shadcn.png",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+      {@render userCard({
+        avatarUrl: "",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+      {@render userCard({
+        avatarUrl: "https://github.com/shadcn.png",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+      {@render userCard({
+        avatarUrl: "",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+      {@render userCard({
+        avatarUrl: "https://github.com/shadcn.png",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+      {@render userCard({
+        avatarUrl: "https://github.com/shadcn.png",
+        initials: "JK",
+        name: "Justin K",
+        role: "Solopreneur",
+        description: "Startfast is a the best way to start a new Saas "
+      })}
+    </div>
+  </section>
 
   <!-- FAQ -->
   <section

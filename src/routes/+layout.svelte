@@ -39,19 +39,7 @@
           href="/"
           class="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Orders
-        </a>
-        <a
-          href="/"
-          class="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Products
-        </a>
-        <a
-          href="/"
-          class="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Customers
+          Pricing
         </a>
         <a
           href="/"
@@ -125,7 +113,7 @@
 
   <footer class="bg-white">
     <div
-      class="mx-auto max-w-[85rem] space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
+      class="mx-auto max-w-[85rem] space-y-8 px-8 py-16 sm:px-6 lg:space-y-16 lg:px-8"
     >
       <div class="grid sm:grid-cols-2 gap-8 lg:grid-cols-3">
         <div>
